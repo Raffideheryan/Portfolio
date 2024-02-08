@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>Price</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="{% url 'index' %}">Home</a>
+                        <a href="{% url 'price' %}">Price</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+
+
+        <!-- Pricing Start -->
+        <div class="price">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Our Best Pricing</p>
+                    <h2>We Provide Best Price in the City</h2>
+                </div>
+                <div class="row">
+                    {% for i in price %}
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="price-item">
+                                <div class="price-img">
+                                    <img src="{{ i.image.url }}" alt="Image">
+                                </div>
+                                <div class="price-text">
+                                    <h2>{{ i.topic }}</h2>
+                                    <h3>${{ i.price }}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Pricing End -->
+
+
+{% endblock %}
