@@ -31,7 +31,7 @@ class About(models.Model):
 class Service(models.Model):
 
     service_topic = models.CharField("Service topic", max_length = 60)
-    text = models.TextField("Service text")
+    text = models.TextField("Service text", blank=True, null=True)
     image = models.ImageField("Service image", upload_to='images/')
     
 
